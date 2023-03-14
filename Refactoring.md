@@ -9,3 +9,18 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+- Split the code into small methods which modularized them into a single functionality per method
+- Used Ternary operators at multiple places instead of `if...else` conditions everywhere
+- Tested for scenarios:
+
+  - When no input is given, to get fallback value
+  - When input given as a primitive type i.e. string
+  - When input is given as an object without the `partitionKey` property
+  - When input is given as an object with `partitionKey` as a property
+
+    ```json
+    {
+      "partitionKey": "someValue"
+    }
+    ```
