@@ -24,9 +24,12 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
     - **Description**: As a Facility Manager, I should have the ability to input custom IDs for agents working at the Facility.
       The Agent Information form should have the ability to edit the auto generated Agent ID.
+
+      UI Mock-ups at: [link](#)
+
     - **Acceptance Criteria**: Ability to edit the Agent ID on the Agent Information form.
       Ability to navigate to the page using the ID in the URL
-      `   [hostname]/agents/{Agent ID}`
+      `[hostname]/agents/{Agent ID}`
     - **Effort**: 5 Story Points
 
     - **Tasks**:
@@ -46,20 +49,18 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
       > The default value for Agent ID will be the auto generated DB ID, overwrite if user input is provided.
 
-    - **Acceptance Criteria**: All network requests and responses support CRUD based on `CustomAgentID`
-      `
+    - **Acceptance Criteria**: All network requests and responses support CRUD based on `CustomAgentID`. The method to generate report `getShiftsByFacility` should accept `CustomAgentID` and return data.
     - **Effort**: 3 Story Points
     - **Tasks**:
       1. Update Agent Table DB to include `CustomAgentID`
       2. Update Agent Data Models in Web Service
-      3. Update Agent Controller to consume and pass `CustomAgentID`
+      3. Update Agent Controller to consume and pass `CustomAgentID`.
 
-  - **[3] User Story**: Report Changes
+  - **[3] User Story**: Reporting Changes
 
     - **Description**: As a reporting user, I should see `CustomAgentID` in the generated PDF reports for AgentID
 
-    - **Acceptance Criteria**: Generated PDF reports should have the value for `CustomAgentID` under Agent ID column
-      `
+    - **Acceptance Criteria**: PDF reports generated using `generateReport` should have the value for `CustomAgentID` under Agent ID column.
     - **Effort**: 2 Story Points
     - **Tasks**:
       1. Update Agent Report field mapping for Agent ID to `CustomAgentID`
